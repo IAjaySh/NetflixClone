@@ -23,7 +23,13 @@ export default function Register() {
     try {
       await axios.post("auth/register", { email, username, password });
       navigate("/login");
-    } catch (err) {}
+    } catch (err) {
+      return(
+        <div>
+          <h1>Facing this issue {err}</h1>
+        </div>
+      )
+    }
   };
 
   function handleSign(){
