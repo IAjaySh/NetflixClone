@@ -9,6 +9,9 @@ const movieRoute = require("./routes/Movies");
 const listRoute = require("./routes/List");
 
 dotenv.config();
+app.use(cors());
+app.use(express.json());
+
 const port = process.env.PORT || 2000;
 mongoose.set("strictQuery", true);
 
@@ -25,9 +28,6 @@ mongoose
   .catch((error) => {
     console.log(error);
   });
-
-app.use(cors());
-app.use(express.json());
 
 app.use("/server/auth", authRoute);
 app.use("/server/users", userRoute);
