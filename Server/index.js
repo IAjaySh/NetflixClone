@@ -8,7 +8,7 @@ const movieRoute =require("./routes/Movies")
 const listRoute =require("./routes/List")
 
 dotenv.config();
-const port = 4000;
+const port = process.env.PORT || 2000;
 mongoose.set("strictQuery", true);
 
 
