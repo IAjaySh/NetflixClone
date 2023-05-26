@@ -1,8 +1,10 @@
 {
     "version": 2,
     "functions": {
-        "timeout": 30
-    },
+    "Server/**/*": {
+      "timeout": 30
+    }
+  },
     "builds": [
         {
             "src": "*.js",
