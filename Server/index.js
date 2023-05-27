@@ -30,7 +30,7 @@ mongoose
   });
 
 app.get('/',(req,res)=>{
-  res.send("<h1>This is Netflix backend.</h1>")
+  res.send("<h1>This is Netflix backend. this is mongourl : </h1>",process.env.MONGO_URL)
 })
 app.use("/server/auth", authRoute);
 app.use("/server/users", userRoute);
