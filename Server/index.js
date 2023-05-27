@@ -17,7 +17,7 @@ mongoose.set("strictQuery", true);
 
 //to connect to mongoose
 mongoose
-  .connect(process.env.MONGO_URl, {
+  .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     // useCreateIndex:true
