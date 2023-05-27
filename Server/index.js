@@ -29,27 +29,18 @@ mongoose
   });
 
 // Test route
-app.get("/", (req, res) => {
-  res.send(`<h1>This is Netflix backend</h1>`);
-});
-
-// Routes
+app.get('/',(req,res)=>{
+  res.send("<h1>This is Netflix backend.</h1>")
+})
 app.use("/server/auth", authRoute);
 app.use("/server/users", userRoute);
 app.use("/server/movie", movieRoute);
 app.use("/server/lists", listRoute);
 
-// Error handling middleware
-app.use((err, req, res, next) => {
-  console.error(err);
-  res.status(500).json({ error: "Internal Server Error" });
-});
+if (port) {
+  app.listen(port, () => {
+    console.log(`Listening to port ....${port}`);
+  });
+}
 
-// Catch-all route handler for unmatched routes
-app.use((req, res, next) => {
-  res.status(404).json({ error: "Not Found" });
-});
-
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
-});
+module.exports = app;
