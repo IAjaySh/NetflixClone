@@ -30,7 +30,7 @@ mongoose
 
 // Test route
 app.get("/", (req, res) => {
-  res.send(`<h1>This is Netflix backend. This is MONGO_URL: ${process.env.MONGO_URL}</h1>`);
+  res.send(`<h1>This is Netflix backend</h1>`);
 });
 
 // Routes
