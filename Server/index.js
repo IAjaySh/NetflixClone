@@ -15,32 +15,41 @@ app.use(express.json());
 const port = process.env.PORT || 2000;
 mongoose.set("strictQuery", true);
 
-//to connect to mongoose
+// Connect to MongoDB
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    // useCreateIndex:true
   })
   .then(() => {
-    console.log("Database connected");
+    console.log("Connected to MongoDB");
   })
   .catch((error) => {
-    console.log(error);
+    console.error("Failed to connect to MongoDB:", error);
   });
 
-app.get('/',(req,res)=>{
-  res.send(`<h1>This is Netflix backend. this is mongourl : ${process.env.MONGO_URL} </h1> `)
-})
+// Test route
+app.get("/", (req, res) => {
+  res.send(`<h1>This is Netflix backend. This is MONGO_URL: ${process.env.MONGO_URL}</h1>`);
+});
+
+// Routes
 app.use("/server/auth", authRoute);
 app.use("/server/users", userRoute);
 app.use("/server/movie", movieRoute);
 app.use("/server/lists", listRoute);
 
-if (port) {
-  app.listen(port, () => {
-    console.log(`Listening to port ....${port}`);
-  });
-}
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).json({ error: "Internal Server Error" });
+});
 
-module.exports = app;
+// Catch-all route handler for unmatched routes
+app.use((req, res, next) => {
+  res.status(404).json({ error: "Not Found" });
+});
+
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
+});
