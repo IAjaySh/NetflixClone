@@ -14,5 +14,5 @@ export const loginSuccess = (user) =>({
 
 //For Logout
 export const logOut = () =>({
-    type:"LOGOut"
+    type:"LOGOUT"
 });
