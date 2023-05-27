@@ -29,6 +29,9 @@ mongoose
     console.log(error);
   });
 
+app.get('/',(req,res)=>{
+  res.send("<h1>This is Netflix backend.</h1>")
+})
 app.use("/server/auth", authRoute);
 app.use("/server/users", userRoute);
 app.use("/server/movie", movieRoute);
