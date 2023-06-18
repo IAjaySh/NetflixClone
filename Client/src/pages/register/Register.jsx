@@ -21,7 +21,7 @@ export default function Register() {
     setPassword(passwordRef.current.value);
     setUsername(usernameRef.current.value);
     try {
-      await axios.post("auth/register", { email, username, password });
+      await axios.post("https://netflixbackend.vercel.app/server/auth/register", { email, username, password });
       navigate("/login");
     } catch (err) {
       return(
