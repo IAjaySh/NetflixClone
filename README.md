@@ -28,7 +28,6 @@ To log in to the website, please use the following credentials:
 
 - User registration and login functionality
 - Access to a collection of movies and TV shows
-- Search, filters, and pagination on the home page
 
 ## Technologies Used
 
