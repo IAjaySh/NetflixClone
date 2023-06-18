@@ -24,6 +24,9 @@ To log in to the website, please use the following credentials:
 ### Home page
 ![Home page](https://i.postimg.cc/qMWVvJxf/Screenshot-637.png)
 
+<br>
+<br>
+
 ## Features
 
 - User registration and login functionality
