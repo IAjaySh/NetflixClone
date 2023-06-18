@@ -1,5 +1,5 @@
 # Netflix
-Netflix clone using MERN
+Netflix clone using MERN and using JWT
 
 Website is live at https://mynetflix-six.vercel.app/
 
