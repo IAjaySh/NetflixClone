@@ -1,50 +1,49 @@
-<!-- Title -->
-<h1 align="center">
-  <br>
-  Netflix Clone
-  <br>
-</h1>
+# Netflix Clone
 
-<!-- Badges -->
-<p align="center">
-  <img src="https://img.shields.io/github/license/your-username/netflix-clone?style=flat-square" alt="License">
-  <img src="https://img.shields.io/github/last-commit/your-username/netflix-clone?style=flat-square" alt="Last Commit">
-</p>
+This project is a Netflix clone built using the MERN stack (MongoDB, Express.js, React.js, Node.js) and JWT authentication. It allows users to register, log in, and access a collection of movies and TV shows.
 
-<!-- Description -->
-<p align="center">
-  A Netflix clone built using the MERN stack (MongoDB, Express.js, React.js, Node.js) and JWT authentication. Explore a collection of movies and TV shows, register, and log in to access the content.
-</p>
+## Live Website
 
-<!-- Demo -->
-<p align="center">
-  <a href="https://mynetflix-six.vercel.app/" target="_blank">View Demo</a>
-</p>
+The website is live and can be accessed at [https://mynetflix-six.vercel.app](https://mynetflix-six.vercel.app).
 
-<!-- Screenshots -->
-<p align="center">
-  <img src="https://i.postimg.cc/7LfxQs9D/Screenshot-639.png" alt="Registration Page" width="200">
-  <img src="https://i.postimg.cc/P5v331D9/Screenshot-638.png" alt="Login Page" width="200">
-  <img src="https://i.postimg.cc/qMWVvJxf/Screenshot-637.png" alt="Home Page" width="200">
-</p>
+## Login Credentials
 
-<!-- Features -->
+To log in to the website, please use the following credentials:
+
+- Email: ajay@gmail.com
+- Password: 123456789
+
+## Screenshots
+
+### Registration page
+![Registration page](https://i.postimg.cc/7LfxQs9D/Screenshot-639.png)
+
+### Login page
+![Login page](https://i.postimg.cc/P5v331D9/Screenshot-638.png)
+
+### Home page
+![Home page](https://i.postimg.cc/qMWVvJxf/Screenshot-637.png)
+
 ## Features
 
 - User registration and login functionality
 - Access to a collection of movies and TV shows
-- Search, filters, and pagination on the home page
 
-<!-- Technologies Used -->
 ## Technologies Used
 
-- Frontend: React.js, HTML, CSS
+- Frontend: React.js
 - Backend: Node.js, Express.js
 - Database: MongoDB
 - Authentication: JWT (JSON Web Tokens)
 
-<!-- Getting Started -->
 ## Getting Started
+
+### Prerequisites
+
+- Node.js installed
+- MongoDB set up and running
+
+### Installation
 
 1. Clone the repository:
 
