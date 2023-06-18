@@ -21,7 +21,7 @@ password : 123456789
 
 
 <h3>Here is the basic code structure</h3>
-<div>
+
     Set up the backend:
         Create an Express.js server to handle API requests.
         Implement MongoDB or a similar database to store user information, movies, and other data.
@@ -47,4 +47,3 @@ password : 123456789
     Style the application:
         Use CSS or a CSS preprocessor (e.g., Sass) to style the components.
         Consider using a UI library or framework (e.g., Material-UI, Bootstrap) for faster development and consistent styling.
-</div>
