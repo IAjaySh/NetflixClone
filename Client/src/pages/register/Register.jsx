@@ -49,7 +49,7 @@ export default function Register() {
       <div className="container">
         <h1>Unlimited movies, Tv shows and many more.</h1>
         <h2>Watch anywhere. Cancel anytime</h2>
-        <p>Deakhna chahate hai, agar hai "To chalye shuru karte hai".</p>
+        <p>Deakhna chahate hai, agar hn "To chalye shuru karte hai".</p>
         {!email ? (
           <div className="input">
             <input
