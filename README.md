@@ -8,7 +8,7 @@ Just use this login credential to login to this website
 Email : ajay@gmail.com
 password : 123456789
 
-<h1>Screenshots:</h1>
+<h1><u><b>Screenshots</u></b></h1>
 
 <h2>Registration page</h2>
 <img src="https://i.postimg.cc/7LfxQs9D/Screenshot-639.png"/>
