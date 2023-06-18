@@ -42,8 +42,7 @@ password : 123456789
     Develop the home page:
         Fetch movie or TV show data from the backend API.
         Display the retrieved data in an organized and visually appealing way.
-        Implement features like search, filters, and pagination to enhance user experience.
 
     Style the application:
-        Use CSS or a CSS preprocessor (e.g., Sass) to style the components.
-        Consider using a UI library or framework (e.g., Material-UI, Bootstrap) for faster development and consistent styling.
+        Use  Sass to style the components.
+        Consider using a UI library or framework (e.g., Material-UI) for faster development and consistent styling.
