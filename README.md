@@ -10,8 +10,8 @@ password : 123456789
 
 Screenshots:
 
-Registration page
-![Alt text](https://i.postimg.cc/7LfxQs9D/Screenshot-639.png)
+<h2>Registration page</h2>
+<img src="https://i.postimg.cc/7LfxQs9D/Screenshot-639.png"/>
 
 <h2>Login Page page</h2><br>
 ![Alt text](https://i.postimg.cc/P5v331D9/Screenshot-638.png)
