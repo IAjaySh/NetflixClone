@@ -1,48 +1,52 @@
-# Netflix
-Netflix clone using MERN and using JWT
+# Netflix Clone
 
-Website is live at https://mynetflix-six.vercel.app/
+This project is a Netflix clone built using the MERN stack (MongoDB, Express.js, React.js, Node.js) and JWT authentication. It allows users to register, log in, and access a collection of movies and TV shows.
 
-Just use this login credential to login to this website 
+## Live Website
 
-Email : ajay@gmail.com
-password : 123456789
+The website is live and can be accessed at [https://mynetflix-six.vercel.app/](https://mynetflix-six.vercel.app/).
 
-<h1 style="border-bottom:2px solid red">Screenshots</h1>
+## Login Credentials
 
-<h2>Registration page</h2>
-<img src="https://i.postimg.cc/7LfxQs9D/Screenshot-639.png"/>
+To log in to the website, please use the following credentials:
 
-<h2>Login Page page</h2>
-<img src="https://i.postimg.cc/P5v331D9/Screenshot-638.png" />
+- Email: ajay@gmail.com
+- Password: 123456789
 
-<h2>Home Page</h2>
-<img src="https://i.postimg.cc/qMWVvJxf/Screenshot-637.png"/>
+## Screenshots
 
+### Registration page
+![Registration page](https://i.postimg.cc/7LfxQs9D/Screenshot-639.png)
 
-<h3>Here is the basic code structure</h3>
+### Login page
+![Login page](https://i.postimg.cc/P5v331D9/Screenshot-638.png)
 
-    Set up the backend:
-        Create an Express.js server to handle API requests.
-        Implement MongoDB or a similar database to store user information, movies, and other data.
-        Use JWT for user authentication and authorization.
-        Set up routes for user registration, login, and accessing movies or TV shows.
+### Home page
+![Home page](https://i.postimg.cc/qMWVvJxf/Screenshot-637.png)
 
-    Build the frontend:
-        Use React.js for creating the user interface.
-        Set up routing to navigate between different pages, such as the registration page, login page, and home page.
-        Create reusable components for forms, buttons, and other UI elements.
-        Use React hooks (e.g., useState, useEffect) to manage component state and make API requests to the backend.
+## Features
 
-    Implement user registration and login functionality:
-        Create registration and login forms to collect user input.
-        Send API requests to the backend to handle user registration and login.
-        Store the JWT token securely in the frontend (e.g., using local storage or cookies) for subsequent authenticated requests.
+- User registration and login functionality
+- Access to a collection of movies and TV shows
+- Search, filters, and pagination on the home page
 
-    Develop the home page:
-        Fetch movie or TV show data from the backend API.
-        Display the retrieved data in an organized and visually appealing way.
+## Technologies Used
 
-    Style the application:
-        Use  Sass to style the components.
-        Consider using a UI library or framework (e.g., Material-UI) for faster development and consistent styling.
+- Frontend: React.js, HTML, CSS
+- Backend: Node.js, Express.js
+- Database: MongoDB
+- Authentication: JWT (JSON Web Tokens)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js installed
+- MongoDB set up and running
+
+### Installation
+
+1. Clone the repository:
+
+   ```shell
+   git clone <repository-url>
