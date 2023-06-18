@@ -13,5 +13,8 @@ Screenshots:
 <h2>Registration page</h2>
 <img src="https://i.postimg.cc/7LfxQs9D/Screenshot-639.png"/>
 
-<h2>Login Page page</h2><br>
+<h2>Login Page page</h2><
 <img src="https://i.postimg.cc/P5v331D9/Screenshot-638.png" />
+
+<h2>Home Page</h2>
+<img src="https://i.postimg.cc/qMWVvJxf/Screenshot-637.png"/>
