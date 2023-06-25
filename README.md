@@ -51,4 +51,4 @@ To log in to the website, please use the following credentials:
 1. Clone the repository:
 
    ```shell
-   git clone <repository-url>
+   git clone https://github.com/Ajay1455/Netflix.git
