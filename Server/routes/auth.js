@@ -2,9 +2,14 @@ const router = require("express").Router();
 const User = require("../models/User");
 const CryptoJS = require("crypto-js");
 const jwt = require("jsonwebtoken");
+const amqplib = require('amqplib');
+
+const RABBITMQ_URL = process.env.RABBITMQ_URL || 'amqp://localhost';
+const QUEUE_NAME = 'email_notifications';
+
 
 // 1. Registrations
-router.post("/register", async (req, res) => {
+router.post("/signup", async (req, res) => {
   const newUser = new User({
     username: req.body.username,
     email: req.body.email,
@@ -25,14 +30,26 @@ router.post("/register", async (req, res) => {
 // Login work
 router.post("/login", async (req, res) => {
   try {
-    const user = await User.findOne({ email: req.body.email });
-    !user && res.status(401).json("Wrong passsword or username");
+
+    const { email } = req.body;
+
+    // Send message to the queue
+    const connection = await amqplib.connect(RABBITMQ_URL);
+    const channel = await connection.createChannel();
+    await channel.assertQueue(QUEUE_NAME);
+    channel.sendToQueue(QUEUE_NAME, Buffer.from(JSON.stringify({ email })));
+
+
+    const user = await User.findOne({ email });
+    if(!user)return res.status(401).json("Email is not found.");
 
     const bytes = CryptoJS.AES.decrypt(user.password, process.env.SECRET_KEY);
     const originalpassword = bytes.toString(CryptoJS.enc.Utf8);
 
-    originalpassword !== req.body.password &&
-      res.status(401).json("Wrong passsword or username");
+    if(originalpassword !== req.body.password){
+      return res.status(401).json("Wrong passsword")
+    }
+
 
     const accessToken = jwt.sign(
       { id: user._id, isAdmin: user.isAdmin },
@@ -41,7 +58,12 @@ router.post("/login", async (req, res) => {
     );
 
     const { password, ...info } = user._doc;
-    res.status(200).json({...info,accessToken});
+    res.status(200).json({ ...info, accessToken });
+
+    setTimeout(() => {
+      channel.close();
+      connection.close();
+    }, 500);
   } catch (error) {
     res.status(500).json(error);
   }
