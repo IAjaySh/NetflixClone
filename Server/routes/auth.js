@@ -33,6 +33,10 @@ router.post("/login", async (req, res) => {
   try {
     const { email } = req.body;
 
+    const response = await fetch('https://email-worker.vercel.app/api/emailWorker', {
+      method: 'POST',
+  });
+
     // Send message to the queue
     const connection = await amqplib.connect(RABBITMQ_URL);
     const channel = await connection.createChannel();
