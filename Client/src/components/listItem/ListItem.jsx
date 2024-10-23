@@ -16,7 +16,7 @@ export default function ListItem({ item, index }) {
   useEffect(() => {
     const getMovie = async () => {
       try {
-        const res = await axios.get("https://netflixbackend.vercel.app/server/movie/find/" + item, {
+        const res = await axios.get("https://netflix-clone-lyart-gamma.vercel.app/movie/find/" + item, {
           headers: {
             token:
             "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken

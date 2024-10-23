@@ -11,7 +11,7 @@ const Features = ({ type, setGenre }) => {
   useEffect(() => {
     const getMovie = async () => {
       try {
-        const res = await axios.get(`https://netflixbackend.vercel.app/server/movie/random?type=${type}`, {
+        const res = await axios.get(`https://netflix-clone-lyart-gamma.vercel.app/server/movie/random?type=${type}`, {
           headers: {
             token:
               "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
