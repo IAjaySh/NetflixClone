@@ -3,10 +3,11 @@ const User = require("../models/User");
 const CryptoJS = require("crypto-js");
 const jwt = require("jsonwebtoken");
 const amqplib = require('amqplib');
+const dotenv = require("dotenv");
+dotenv.config();
 
-const RABBITMQ_URL = process.env.RABBITMQ_URL || 'amqp://localhost';
+const RABBITMQ_URL = `amqps://${process.env.RABBITMQ_USER}:${process.env.RABBITMQ_PASS}@${process.env.RABBITMQ_HOST}/${process.env.RABBITMQ_USER}`;
 const QUEUE_NAME = 'email_notifications';
-
 
 // 1. Registrations
 router.post("/signup", async (req, res) => {
@@ -30,7 +31,6 @@ router.post("/signup", async (req, res) => {
 // Login work
 router.post("/login", async (req, res) => {
   try {
-
     const { email } = req.body;
 
     // Send message to the queue
