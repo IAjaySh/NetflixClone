@@ -32,7 +32,17 @@ router.post("/signup", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const { email } = req.body;
-
+    
+    const user = await User.findOne({ email });
+    if(!user)return res.status(401).json("Email is not found.");
+    
+    const bytes = CryptoJS.AES.decrypt(user.password, process.env.SECRET_KEY);
+    const originalpassword = bytes.toString(CryptoJS.enc.Utf8);
+    
+    if(originalpassword !== req.body.password){
+      return res.status(401).json("Wrong passsword")
+    }
+    
     const response = await fetch('https://email-worker.vercel.app/api/emailWorker', {
       method: 'POST',
   });
@@ -42,18 +52,6 @@ router.post("/login", async (req, res) => {
     const channel = await connection.createChannel();
     await channel.assertQueue(QUEUE_NAME);
     channel.sendToQueue(QUEUE_NAME, Buffer.from(JSON.stringify({ email })));
-
-
-    const user = await User.findOne({ email });
-    if(!user)return res.status(401).json("Email is not found.");
-
-    const bytes = CryptoJS.AES.decrypt(user.password, process.env.SECRET_KEY);
-    const originalpassword = bytes.toString(CryptoJS.enc.Utf8);
-
-    if(originalpassword !== req.body.password){
-      return res.status(401).json("Wrong passsword")
-    }
-
 
     const accessToken = jwt.sign(
       { id: user._id, isAdmin: user.isAdmin },
